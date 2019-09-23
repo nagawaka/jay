@@ -2,9 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import 'bulma/bulma.sass'
-
-import Header from "./header"
+import Header from "./header/index"
 
 
 const Layout = ({ children }) => {

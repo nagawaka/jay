@@ -12,6 +12,7 @@
     "gatsby-plugin-offline": "^3.0.8",
     "gatsby-plugin-react-helmet": "^3.1.8",
     "gatsby-plugin-sass": "^2.1.15",
+    "gatsby-plugin-sass-resources": "^2.0.0",
     "gatsby-plugin-sharp": "^2.2.25",
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-sharp": "^2.2.16",
@@ -35,12 +36,5 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
