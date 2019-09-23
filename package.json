@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "nagawaka <nakagawa@gmail.com>",
   "dependencies": {
+    "bulma": "^0.7.5",
     "gatsby": "^2.15.21",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-manifest": "^2.2.18",
