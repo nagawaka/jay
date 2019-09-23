@@ -5,6 +5,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import Lastfm from '../components/lastfm';
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
   {
@@ -35,14 +37,14 @@ const IndexPage = () => {
   }
   `)
 
-  console.log(data);
-
   return (
     <Layout>
       <SEO title="Home" />
 
       <h1>Hello world!</h1>
-      <p>Welcome to my little playpen.</p>
+      <p>Welcome to my little playpen. Here are some songs I've been listening to</p>
+
+      <Lastfm data={data.allLastfmPlayback.edges} />
     </Layout>
   )
 }
