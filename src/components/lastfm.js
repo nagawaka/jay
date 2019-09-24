@@ -28,7 +28,7 @@ class Lastfm extends React.Component {
             {/* <div className="hero-body"> */}
             <div className="columns is-multiline is-mobile">
               {data.map((album) => (
-                <div key={album.node.id} className="column is-1-dektop is-1-tablet is-4-mobile">
+                <div key={album.node.id} className="column is-3-desktop is-3-tablet is-4-mobile">
                   <img src={album.node.tracks[0].image[album.node.tracks[0].image.length - 1].text} alt={`${album.node.artist.name} - ${album.node.name}`} title={`${album.node.artist.name} - ${album.node.name}`} />
                 </div>
               ))}
