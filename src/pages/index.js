@@ -1,50 +1,49 @@
-import { useStaticQuery, graphql } from "gatsby"
-
 import React from "react"
+
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Lastfm from '../components/lastfm';
+import Lastfm from './../components/lastfm';
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-  {
-    allLastfmPlayback {
-      edges {
-        node {
+export const query = graphql`
+query {
+  allLastfmAlbum {
+    edges {
+      node {
+        id
+        name
+        mbid
+        artist {
           id
-          track {
-            id
-            name
-            url
-            image {
-              text
-              size
-            }
-            artist {
-              id
-              name
-            }
-            album {
-              id
-              name
-            }
+          name
+        }
+        tracks {
+          image {
+            text
+            size
           }
         }
       }
     }
   }
-  `)
+}
+`
 
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
 
-      <h1>Hello world!</h1>
-      <p>Welcome to my little playpen. Here are some songs I've been listening to</p>
+      <section className="section">
+        <div className="container">
+          <h1>Hello world!</h1>
+          <p>Welcome to my little playpen. Here are some songs I've been listening to</p>
+        </div>
+      </section>
 
-      <Lastfm data={data.allLastfmPlayback.edges} />
+      <Lastfm data={data} />
     </Layout>
   )
 }

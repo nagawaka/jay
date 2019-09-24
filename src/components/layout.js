@@ -20,13 +20,15 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <section className="section">
-        <main className="container">
+      <section>
+        <main>
           {children}
         </main>
       </section>
-      <footer className="container">
-        © {new Date().getFullYear()} nagawaka
+      <footer className="section">
+        <div className="container">
+          © {new Date().getFullYear()} nagawaka
+        </div>
       </footer>
     </>
   )

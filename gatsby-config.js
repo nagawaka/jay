@@ -29,7 +29,7 @@ module.exports = {
       options: {
         api_key: `${process.env.LAST_FM_API_KEY}`,
         username: `${process.env.LAST_FM_USERNAME}`,
-        limit: 10, // the maximum number of playbacks to pull in
+        limit: 25, // the maximum number of playbacks to pull in
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,20 +1,23 @@
 import React from "react"
 
-const Lastfm = ({ data }) => {
-
+const Lastfm = ({data}) => {
   return (
     <div className="last-fm hero is-light">
-      <div className="hero-body">
+      <section className="section" style={{ paddingTop: "0", paddingBottom: "0" }}>
         <div className="container">
-          <ul>
-            {data.map((play, idx) => (
-              <li key={idx}>
-                {play.node.track.artist.name} - {play.node.track.name}
-              </li>
-            ))}
-          </ul>
+          {/* <div className="hero-body"> */}
+            <div className="tile is-ancestor">
+              <div className="tile is-parent">
+                {data.allLastfmAlbum.edges.map((album, idx) => (
+                  <div key={idx} className="tile is-child">
+                    <img src={album.node.tracks[0].image[album.node.tracks[0].image.length - 1].text} alt={`${album.node.artist.name} - ${album.node.name}`} />
+                  </div>
+                ))}
+              </div>
+            {/* </div> */}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
