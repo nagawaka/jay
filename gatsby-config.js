@@ -29,7 +29,13 @@ module.exports = {
       options: {
         api_key: `${process.env.LAST_FM_API_KEY}`,
         username: `${process.env.LAST_FM_USERNAME}`,
-        limit: 25, // the maximum number of playbacks to pull in
+        limit: 200, // the maximum number of playbacks to pull in
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-47842815-2",
       },
     },
     `gatsby-transformer-sharp`,
