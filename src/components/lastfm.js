@@ -1,7 +1,11 @@
 import React from "react"
+// import { Link } from "gatsby";
+
+// import slugify from "slugify";
 
 import { shuffle } from './../utils/shuffle';
 import { pick } from './../utils/pick';
+
 
 class Lastfm extends React.Component {
   constructor(props) {
@@ -40,11 +44,5 @@ class Lastfm extends React.Component {
     )
   }
 }
-// const Lastfm = ({ data }) => {
-//   const retData = shuffle(data);
-//   return (
-    
-//   )
-// }
 
 export default Lastfm

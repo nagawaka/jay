@@ -1,13 +1,12 @@
-// const wrapper = promise =>
-//   promise.then(result => {
-//     if (result.errors) {
-//       throw result.errors
-//     }
-//     return result
-//   })
+const wrapper = promise =>
+  promise.then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+    return result
+  })
 
 async function onCreateNode({ node, actions }) {
-  // only log for nodes of mediaType `text/yaml`
   if (node.internal.type !== `LastfmTrack`) {
     return
   }
@@ -22,19 +21,16 @@ async function onCreateNode({ node, actions }) {
       value: false
     })
   }
-
-  // console.log(node);
-
-  // const content = await loadNodeContent(node)
-  // const parsedContent = jsYaml.load(content)
 }
 exports.onCreateNode = onCreateNode
 
 
 // You can delete this file if you're not using it
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const defaultTemplate = require.resolve('./src/components/index.js')
+  // const albumTemplate = require.resolve('./src/components/album.js')
+  // const slugify = require('slugify');
 
   // const query = await wrapper(graphql(`
   //   query {
@@ -60,7 +56,16 @@ exports.createPages = ({ graphql, actions }) => {
   //   }
   // `))
 
-  // const data = query.data.allLastfmAlbum.edges;
+  // query.data.allLastfmAlbum.edges.map(album => {
+  //   const slug = slugify(`${album.node.name}_${album.node.artist.name}`).toLowerCase();
+  //   createPage({
+  //     path: `/album/${slug}`,
+  //     component: albumTemplate,
+  //     context: {
+  //       album: album.node,
+  //     }
+  //   })
+  // })
 
   // generate index
 

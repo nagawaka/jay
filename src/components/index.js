@@ -1,14 +1,14 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "./layout"
 import SEO from "./seo"
 
 import Lastfm from './lastfm';
+import HeaderSection from './header/section';
 
-import { useStaticQuery, graphql } from "gatsby";
 
-const IndexPage = ({ pageContext }) => {
-  // const { data } = pageContext;
+const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
       allLastfmAlbum(filter: {tracks: {elemMatch: {image: {elemMatch: {text: {}}}, fields: {show: {ne: false}}}}}) {
@@ -37,12 +37,7 @@ const IndexPage = ({ pageContext }) => {
     <Layout>
       <SEO title="Home" />
 
-      <section className="section">
-        <div className="container">
-          <h1>Hello world!</h1>
-          <p>Welcome to my little playpen. Here are some albums I've been listening to.</p>
-        </div>
-      </section>
+      <HeaderSection text="Welcome to my little playpen. Here are some albums I've been listening to."></HeaderSection>
 
       <Lastfm data={data.allLastfmAlbum.edges} />
 

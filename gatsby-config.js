@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-modal-routing`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,7 +30,7 @@ module.exports = {
       options: {
         api_key: `${process.env.LAST_FM_API_KEY}`,
         username: `${process.env.LAST_FM_USERNAME}`,
-        limit: 200, // the maximum number of playbacks to pull in
+        limit: 200, // 500
       },
     },
     {
