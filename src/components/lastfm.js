@@ -6,6 +6,7 @@ import React from "react"
 import { shuffle } from './../utils/shuffle';
 import { pick } from './../utils/pick';
 
+import './lastfm.scss';
 
 class Lastfm extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Lastfm extends React.Component {
 
   componentDidMount() {
     this.setState({
-      data: pick(shuffle(this.props.data), 72),
+      data: pick(shuffle(this.props.data), 36),
     })
   }
 
@@ -32,7 +33,7 @@ class Lastfm extends React.Component {
             {/* <div className="hero-body"> */}
             <div className="columns is-multiline is-mobile">
               {data.map((album) => (
-                <div key={album.node.id} className="column is-3-desktop is-3-tablet is-4-mobile">
+                <div key={album.node.id} className="column is-3-desktop is-3-tablet is-6-mobile">
                   <img src={album.node.tracks[0].image[album.node.tracks[0].image.length - 1].text} alt={`${album.node.artist.name} - ${album.node.name}`} title={`${album.node.artist.name} - ${album.node.name}`} />
                 </div>
               ))}

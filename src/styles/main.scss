@@ -6,3 +6,16 @@ $light: #00CACD;
 @import "~bulma/sass/components/_all";
 @import "~bulma/sass/grid/_all";
 @import "~bulma/sass/layout/_all";
+
+.my-icon {
+  svg {
+    width: 20px;
+  }
+}
+
+footer {
+  .my-icon {
+    vertical-align: text-top;
+    margin: 0 5px;
+  }
+}

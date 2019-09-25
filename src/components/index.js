@@ -37,7 +37,10 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
 
-      <HeaderSection text="Welcome to my little playpen. Here are some albums I've been listening to."></HeaderSection>
+      <HeaderSection>
+        <p>Welcome to my little playpen. Here is a selection of some albums I've been listening to, courtesy of last.fm.<br/>
+          You can reload this page and there will be a different selection.</p>
+      </HeaderSection>
 
       <Lastfm data={data.allLastfmAlbum.edges} />
 

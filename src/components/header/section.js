@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-const HeaderSection = ({ text }) => {
+const HeaderSection = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       allLastfmArtist {
@@ -19,10 +19,16 @@ const HeaderSection = ({ text }) => {
   return (
     <section className="section">
       <div className="container">
-        <h1>Hello world!</h1>
-        <p>{text}</p>
+        <div class="box">
+          <div class="media-content">
+            <div class="content">
+              <h1>Hello world!</h1>
+              {children}
 
-        <p>Data created from {data.allLastfmTrack.totalCount} tracks by {data.allLastfmArtist.totalCount} artists, totalling {data.allLastfmPlayback.totalCount} playbacks</p>
+              <p><i>Data created from <strong>{data.allLastfmTrack.totalCount} tracks</strong> by <strong>{data.allLastfmArtist.totalCount} artists</strong>, totalling <strong>{data.allLastfmPlayback.totalCount} playbacks</strong></i></p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
