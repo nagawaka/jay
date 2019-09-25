@@ -26,7 +26,7 @@ exports.onCreateNode = onCreateNode
 
 
 // You can delete this file if you're not using it
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const defaultTemplate = require.resolve('./src/components/index.js')
   // const albumTemplate = require.resolve('./src/components/album.js')

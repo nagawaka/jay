@@ -30,7 +30,7 @@ module.exports = {
       options: {
         api_key: `${process.env.LAST_FM_API_KEY}`,
         username: `${process.env.LAST_FM_USERNAME}`,
-        limit: 200, // 500
+        limit: 400, // 500
       },
     },
     {
