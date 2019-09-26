@@ -1,24 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import simpleIcons from 'simple-icons';
 
 import './../styles/main.scss';
 
-import Header from "./header/index"
-
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <section>
@@ -34,17 +21,17 @@ const Layout = ({ children }) => {
             </div>
             <div className="column has-text-right">
               <div className="is-inline-block">
-                <a href="https://twitter.com/mnagawaka" target="_blank" rel="noopener noreferer">
+                <a href="https://twitter.com/mnagawaka" target="_blank" rel="noopener noreferrer">
                   <span className="my-icon" dangerouslySetInnerHTML={{ __html: simpleIcons.get("Twitter").svg }}></span>
                 </a>
               </div>
               <div className="is-inline-block">
-                <a href="https://github.com/nagawaka" target="_blank" rel="noopener noreferer">
+                <a href="https://github.com/nagawaka" target="_blank" rel="noopener noreferrer">
                   <span className="my-icon" dangerouslySetInnerHTML={{ __html: simpleIcons.get("GitHub").svg }}></span>
                 </a>
               </div>
               <div className="is-inline-block">
-                <a href="https://www.linkedin.com/in/nagawaka" target="_blank" rel="noopener noreferer">
+                <a href="https://www.linkedin.com/in/nagawaka" target="_blank" rel="noopener noreferrer">
                   <span className="my-icon" dangerouslySetInnerHTML={{ __html: simpleIcons.get("Linkedin").svg }}></span>
                 </a>
               </div>
